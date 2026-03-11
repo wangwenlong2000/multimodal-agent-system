@@ -1,0 +1,30 @@
+system_name: multimodal_agent_system
+version: 0.3.0
+
+enable_case_repository: true
+enable_case_writeback: true
+enable_parallel_experts: true
+use_mock_when_provider_unavailable: false
+
+fail_closed_model_calls: true
+require_mcp_execution: true
+require_preflight_before_run: true
+
+active_model_provider_file: configs/active_model_provider.yaml
+active_plugins_file: configs/active_plugins.yaml
+case_policy_file: configs/case_policy.yaml
+
+planner_timeout_seconds: 60
+expert_timeout_seconds: 120
+
+query_preprocess:
+  enable_basic_intent_detection: true
+
+alignment_tools:
+  - align_time
+  - align_location
+  - entity_mapping
+
+default_fusion_plugin: simple_fusion
+
+expert_agent_max_steps: 6

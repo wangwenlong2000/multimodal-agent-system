@@ -1,0 +1,11 @@
+enable_case_repository: true
+enable_case_writeback: true
+
+case_routing:
+  by_domain: true
+  by_intent: true
+
+writeback_rules:
+  min_confidence: 0.6
+  require_summary: true
+  require_evidence: false

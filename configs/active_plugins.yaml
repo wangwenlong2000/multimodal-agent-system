@@ -1,0 +1,22 @@
+experts:
+  - trajectory_expert
+  - netflow_expert
+  - streetview_expert
+
+tools:
+  - align_time
+  - align_location
+  - entity_mapping
+  - fuse_evidence
+
+  - load_netflow
+  - flow_aggregate
+  - anomaly_detect
+  - port_scan_detect
+  - volume_outlier_detect
+
+fusion:
+  - simple_fusion
+
+cases:
+  - repository

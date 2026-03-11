@@ -1,0 +1,8 @@
+active_provider: qwen_api
+active_model: qwen-plus
+
+role_models:
+  planner: qwen-plus
+  expert: qwen-plus
+  response: qwen-plus
+  preprocess: qwen-plus

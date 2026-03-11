@@ -1,0 +1,24 @@
+enabled: true
+transport: stdio
+fallback_to_local_adapter: false
+
+servers:
+  general_server:
+    command: "{python}"
+    args:
+      - "{project_root}/mcp/servers/general_server.py"
+
+  trajectory_server:
+    command: "{python}"
+    args:
+      - "{project_root}/mcp/servers/trajectory_server.py"
+
+  netflow_server:
+    command: "{python}"
+    args:
+      - "{project_root}/mcp/servers/netflow_server.py"
+
+  streetview_server:
+    command: "{python}"
+    args:
+      - "{project_root}/mcp/servers/streetview_server.py"

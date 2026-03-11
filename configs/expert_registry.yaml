@@ -1,0 +1,69 @@
+experts:
+  trajectory_expert:
+    description: 轨迹分析专家，负责时空轨迹、停留点、移动模式和轨迹异常分析
+    domain: trajectory
+    capabilities:
+      - 轨迹模式识别
+      - 停留点分析
+      - 轨迹异常检测
+      - 时间空间行为分析
+    analysis_patterns:
+      - trajectory_pattern_analysis
+      - spatiotemporal_anomaly_detection
+    input_requirements:
+      - trajectory_records
+    output_contract:
+      summary: string
+      evidence: array
+      metrics: object
+      confidence: number
+    tags:
+      - mobility
+      - spatiotemporal
+
+  netflow_expert:
+    description: 网络流量分析专家，负责流量行为分析、端口扫描检测、体量异常检测和综合风险判断
+    domain: netflow
+    capabilities:
+      - 端口扫描检测
+      - 流级聚合分析
+      - 大流量异常检测
+      - 异常流量风险判断
+    analysis_patterns:
+      - flow_aggregation
+      - port_scan_detection
+      - sigma_outlier_detection
+      - traffic_risk_assessment
+    input_requirements:
+      - packet_or_flow_csv
+    output_contract:
+      summary: string
+      evidence: array
+      metrics: object
+      confidence: number
+    tags:
+      - network
+      - anomaly
+      - scan
+
+  streetview_expert:
+    description: 街景分析专家，负责街景图像、环境特征和视觉证据提取
+    domain: streetview
+    capabilities:
+      - 场景理解
+      - 视觉目标识别
+      - 环境特征提取
+      - 街景证据总结
+    analysis_patterns:
+      - scene_understanding
+      - visual_object_extraction
+    input_requirements:
+      - images
+    output_contract:
+      summary: string
+      evidence: array
+      metrics: object
+      confidence: number
+    tags:
+      - vision
+      - image
