@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "case_id": {"type": "string"},
+    "title": {"type": "string"},
+    "query": {"type": "string"},
+    "intent": {"type": "string"},
+    "modalities": {"type": "array"},
+    "plan": {"type": "object"},
+    "experts_used": {"type": "array"},
+    "tools_used": {"type": "array"},
+    "fusion_plugin": {"type": "string"},
+    "model_provider": {"type": "string"},
+    "result_summary": {"type": "string"},
+    "final_answer": {"type": "string"},
+    "confidence": {"type": "number"},
+    "created_at": {"type": "string"},
+    "tags": {"type": "array"}
+  },
+  "required": ["case_id", "query", "final_answer", "confidence", "created_at"]
+}

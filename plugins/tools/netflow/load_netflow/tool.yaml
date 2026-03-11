@@ -1,0 +1,29 @@
+name: load_netflow
+description: 加载网络流量CSV数据，输出标准化 packet rows
+source: mcp
+server: netflow_server
+input_schema:
+  type: object
+  properties:
+    path:
+      type: string
+      description: CSV 文件路径
+  required:
+    - path
+output_schema:
+  type: object
+  properties:
+    status:
+      type: string
+    rows:
+      type: array
+    row_count:
+      type: integer
+examples:
+  - input:
+      path: data/samples/netflow/sample_packets.csv
+    output:
+      row_count: 35
+consumes: []
+produces:
+  - packet_rows

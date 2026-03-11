@@ -1,0 +1,26 @@
+name: streetview_expert
+description: 街景分析专家，负责街景图像、环境特征、视觉证据提取与场景总结
+domain: streetview
+capabilities:
+  - 场景理解
+  - 视觉目标识别
+  - 环境特征提取
+  - 街景证据总结
+analysis_patterns:
+  - scene_understanding
+  - object_extraction
+  - environment_attribute_analysis
+input_requirements:
+  - images
+output_contract:
+  summary: string
+  metrics: object
+  evidence: array
+  confidence: number
+system_prompt: prompt.system.md
+user_prompt: prompt.user.md
+handler: handler.py
+tags:
+  - vision
+  - image
+  - streetview

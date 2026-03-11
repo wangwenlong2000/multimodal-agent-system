@@ -1,0 +1,22 @@
+servers:
+  general_server:
+    tools:
+      - align_time
+      - align_location
+      - entity_mapping
+      - fuse_evidence
+  trajectory_server:
+    tools:
+      - load_trajectory
+      - stay_points
+      - map_match
+  netflow_server:
+    tools:
+      - load_netflow
+      - flow_aggregate
+      - anomaly_detect
+  streetview_server:
+    tools:
+      - load_streetview
+      - scene_classify
+      - object_detect

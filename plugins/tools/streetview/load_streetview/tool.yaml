@@ -1,0 +1,5 @@
+name: load_streetview
+type: tool
+source: mcp
+server: streetview_server
+description: 加载街景图像数据

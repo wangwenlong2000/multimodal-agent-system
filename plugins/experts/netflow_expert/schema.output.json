@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "expert_name": {"type": "string"},
+    "status": {"type": "string"},
+    "summary": {"type": "string"},
+    "evidence": {"type": "array"},
+    "metrics": {"type": "object"},
+    "confidence": {"type": "number"},
+    "quality_notes": {"type": "array"}
+  },
+  "required": ["expert_name", "status", "summary", "evidence", "metrics", "confidence", "quality_notes"]
+}

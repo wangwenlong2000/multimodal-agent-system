@@ -1,0 +1,5 @@
+name: load_trajectory
+type: tool
+source: mcp
+server: trajectory_server
+description: 加载轨迹数据

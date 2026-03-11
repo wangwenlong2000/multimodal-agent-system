@@ -1,0 +1,4 @@
+name: cross_modal_anomaly
+type: fusion
+description: 跨模态异常分析融合
+entrypoint: handler.py

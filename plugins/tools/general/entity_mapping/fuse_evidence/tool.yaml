@@ -1,0 +1,30 @@
+name: fuse_evidence
+description: 对多来源证据进行简单融合与汇总，输出统一证据列表
+source: mcp
+server: general_server
+input_schema:
+  type: object
+  properties:
+    evidence_groups:
+      type: array
+      description: 多组证据
+  required:
+    - evidence_groups
+output_schema:
+  type: object
+  properties:
+    status:
+      type: string
+    fused_evidence:
+      type: array
+examples:
+  - input:
+      evidence_groups:
+        - []
+        - []
+    output:
+      status: ok
+consumes:
+  - evidence_groups
+produces:
+  - fused_evidence

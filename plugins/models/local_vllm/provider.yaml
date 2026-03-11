@@ -1,0 +1,7 @@
+name: local_vllm
+type: model_provider
+base_url_env: LOCAL_VLLM_BASE_URL
+api_key_env: LOCAL_VLLM_API_KEY
+default_model: qwen2.5-14b-instruct
+supports:
+  - chat

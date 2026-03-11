@@ -1,0 +1,35 @@
+name: entity_mapping
+description: 对跨模态或跨来源实体进行统一映射，生成实体对应关系
+source: mcp
+server: general_server
+input_schema:
+  type: object
+  properties:
+    records:
+      type: array
+      description: 包含实体标识的记录
+    entity_fields:
+      type: array
+      items:
+        type: string
+      description: 可能的实体字段名列表
+  required:
+    - records
+output_schema:
+  type: object
+  properties:
+    status:
+      type: string
+    entity_map:
+      type: object
+examples:
+  - input:
+      entity_fields:
+        - src_ip
+        - device_id
+    output:
+      status: ok
+consumes:
+  - records
+produces:
+  - entity_map

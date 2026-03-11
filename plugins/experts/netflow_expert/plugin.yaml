@@ -1,0 +1,28 @@
+name: netflow_expert
+description: 网络流量分析专家，负责网络流量、流级异常、端口扫描、体量异常和风险判断
+domain: netflow
+capabilities:
+  - 识别端口扫描行为
+  - 识别大流量异常
+  - 识别可疑五元组流
+  - 汇总流量安全风险
+analysis_patterns:
+  - 端口扫描检测
+  - 流级聚合分析
+  - 体量异常检测
+  - 风险评分
+input_requirements:
+  - packet_or_flow_csv
+output_contract:
+  summary: string
+  metrics: object
+  evidence: array
+  confidence: number
+system_prompt: prompt.system.md
+user_prompt: prompt.user.md
+handler: handler.py
+tags:
+  - network
+  - netflow
+  - anomaly
+  - scan

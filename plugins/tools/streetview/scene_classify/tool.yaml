@@ -1,0 +1,5 @@
+name: scene_classify
+type: tool
+source: mcp
+server: streetview_server
+description: 街景场景分类

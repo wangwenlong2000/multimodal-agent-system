@@ -1,0 +1,39 @@
+name: align_time
+description: 对来自不同专家或不同数据源的时间字段进行统一对齐，输出标准化时间窗口和对齐结果
+source: mcp
+server: general_server
+input_schema:
+  type: object
+  properties:
+    records:
+      type: array
+      description: 待对齐的记录列表
+    time_field:
+      type: string
+      description: 时间字段名
+    tolerance_seconds:
+      type: number
+      description: 允许的时间容差，默认60秒
+  required:
+    - records
+output_schema:
+  type: object
+  properties:
+    status:
+      type: string
+    aligned_records:
+      type: array
+    window_start:
+      type: number
+    window_end:
+      type: number
+examples:
+  - input:
+      time_field: timestamp
+      tolerance_seconds: 60
+    output:
+      status: ok
+consumes:
+  - records
+produces:
+  - time_aligned_records

@@ -1,0 +1,26 @@
+name: trajectory_expert
+description: 轨迹分析专家，负责时空轨迹、停留点、移动模式和轨迹异常分析
+domain: trajectory
+capabilities:
+  - 轨迹模式识别
+  - 停留点分析
+  - 轨迹异常检测
+  - 时空行为总结
+analysis_patterns:
+  - trajectory_pattern_analysis
+  - stop_point_analysis
+  - spatiotemporal_anomaly_detection
+input_requirements:
+  - trajectory_records
+output_contract:
+  summary: string
+  metrics: object
+  evidence: array
+  confidence: number
+system_prompt: prompt.system.md
+user_prompt: prompt.user.md
+handler: handler.py
+tags:
+  - mobility
+  - trajectory
+  - spatiotemporal

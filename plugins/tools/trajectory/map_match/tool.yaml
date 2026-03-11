@@ -1,0 +1,5 @@
+name: map_match
+type: tool
+source: mcp
+server: trajectory_server
+description: 轨迹地图匹配

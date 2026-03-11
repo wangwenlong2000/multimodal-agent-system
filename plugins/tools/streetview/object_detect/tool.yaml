@@ -1,0 +1,5 @@
+name: object_detect
+type: tool
+source: mcp
+server: streetview_server
+description: 街景目标检测

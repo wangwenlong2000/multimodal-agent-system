@@ -1,0 +1,17 @@
+{
+  "case_id": "cross_modal_case_001",
+  "title": "夜间停留与异常流量联合分析",
+  "query": "目标对象在夜间停留期间是否伴随异常网络流量与街景异常？",
+  "intent": "cross_modal_anomaly_analysis",
+  "modalities": ["trajectory", "netflow", "streetview"],
+  "plan": {"experts": ["trajectory_expert", "netflow_expert", "streetview_expert"]},
+  "experts_used": ["trajectory_expert", "netflow_expert", "streetview_expert"],
+  "tools_used": ["load_trajectory", "stay_points", "load_netflow", "flow_aggregate", "load_streetview", "scene_classify", "align_time", "align_location", "entity_mapping"],
+  "fusion_plugin": "cross_modal_anomaly",
+  "model_provider": "qwen_api",
+  "result_summary": "发现夜间停留与可疑网络流量存在时间重叠，街景场景中车辆密度偏高。",
+  "final_answer": "这是一个经典参考案例，占位文本。",
+  "confidence": 0.88,
+  "created_at": "2026-03-08T00:00:00Z",
+  "tags": ["classic", "cross_modal", "night"]
+}

@@ -1,0 +1,29 @@
+name: flow_aggregate
+description: 按五元组对 packet rows 做流级聚合，输出 flow rows
+source: mcp
+server: netflow_server
+input_schema:
+  type: object
+  properties:
+    netflow:
+      type: object
+      description: load_netflow 返回结果
+  required:
+    - netflow
+output_schema:
+  type: object
+  properties:
+    status:
+      type: string
+    flows:
+      type: array
+    flow_count:
+      type: integer
+examples:
+  - input: {}
+    output:
+      flow_count: 10
+consumes:
+  - packet_rows
+produces:
+  - flow_rows

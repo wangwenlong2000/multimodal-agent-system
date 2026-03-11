@@ -1,0 +1,4 @@
+models:
+  - qwen-plus
+  - qwen-max
+  - qwen-vl-max

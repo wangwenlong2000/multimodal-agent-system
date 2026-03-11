@@ -1,0 +1,37 @@
+name: volume_outlier_detect
+description: 基于字节数均值加3倍标准差识别异常大流量
+source: mcp
+server: netflow_server
+input_schema:
+  type: object
+  properties:
+    netflow:
+      type: object
+      description: flow_aggregate 结果
+    sigma:
+      type: number
+      description: 标准差倍数，默认3
+  required:
+    - netflow
+output_schema:
+  type: object
+  properties:
+    status:
+      type: string
+    mean_bytes:
+      type: number
+    std_bytes:
+      type: number
+    threshold:
+      type: number
+    outliers:
+      type: array
+examples:
+  - input:
+      sigma: 3
+    output:
+      threshold: 12452.0
+consumes:
+  - flow_rows
+produces:
+  - volume_outliers

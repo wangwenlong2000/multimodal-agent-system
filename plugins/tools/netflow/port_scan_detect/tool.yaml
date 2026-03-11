@@ -1,0 +1,36 @@
+name: port_scan_detect
+description: 检测连接超过指定不同目标端口数量的源IP，识别可能的端口扫描行为
+source: mcp
+server: netflow_server
+input_schema:
+  type: object
+  properties:
+    netflow:
+      type: object
+      description: 上游 load_netflow 或 flow_aggregate 结果
+    min_unique_dst_ports:
+      type: integer
+      description: 端口扫描阈值
+  required:
+    - netflow
+output_schema:
+  type: object
+  properties:
+    status:
+      type: string
+    suspicious_sources:
+      type: array
+    threshold:
+      type: integer
+examples:
+  - input:
+      min_unique_dst_ports: 20
+    output:
+      suspicious_sources:
+        - src_ip: 10.0.0.66
+          unique_dst_ports: 26
+consumes:
+  - packet_rows
+  - flow_rows
+produces:
+  - scan_findings

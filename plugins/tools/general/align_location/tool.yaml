@@ -1,0 +1,38 @@
+name: align_location
+description: 对不同来源的位置字段做统一标准化和位置对齐
+source: mcp
+server: general_server
+input_schema:
+  type: object
+  properties:
+    records:
+      type: array
+      description: 待对齐的位置记录
+    lat_field:
+      type: string
+      description: 纬度字段名
+    lon_field:
+      type: string
+      description: 经度字段名
+    tolerance_meters:
+      type: number
+      description: 位置对齐容差
+  required:
+    - records
+output_schema:
+  type: object
+  properties:
+    status:
+      type: string
+    aligned_records:
+      type: array
+examples:
+  - input:
+      lat_field: latitude
+      lon_field: longitude
+    output:
+      status: ok
+consumes:
+  - records
+produces:
+  - location_aligned_records

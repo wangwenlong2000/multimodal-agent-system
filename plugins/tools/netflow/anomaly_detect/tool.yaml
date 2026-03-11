@@ -1,0 +1,31 @@
+name: anomaly_detect
+description: 基于流量体量和包数做基础异常检测并给出风险等级
+source: mcp
+server: netflow_server
+input_schema:
+  type: object
+  properties:
+    netflow:
+      type: object
+      description: flow_aggregate 返回结果
+  required:
+    - netflow
+output_schema:
+  type: object
+  properties:
+    status:
+      type: string
+    findings:
+      type: array
+    finding_count:
+      type: integer
+    risk_level:
+      type: string
+examples:
+  - input: {}
+    output:
+      risk_level: medium_risk
+consumes:
+  - flow_rows
+produces:
+  - anomaly_findings
